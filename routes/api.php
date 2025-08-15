@@ -29,3 +29,17 @@ Route::prefix('user')->controller(AuthController::class)->group(function () {
     Route::put('update','update');
     Route::post('logout','logout');
 });
+
+Route::prefix('contact-us')->controller(App\Http\Controllers\Api\ContuctUsController::class)->group(function () {
+    Route::post('store', 'store');
+    Route::get('show/{id}', 'show');
+    // 
+});
+
+Route::prefix('kids')->controller(App\Http\Controllers\Api\KidsController::class)->group(function () {
+    Route::post('store', 'store');
+    Route::get('index', 'index');
+    Route::get('show/{id}', 'show');
+    Route::put('update/{id}', 'update');
+    Route::delete('delete/{id}', 'delete');
+});

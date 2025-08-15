@@ -14,7 +14,7 @@ return new class extends Migration
        Schema::create('tests', function (Blueprint $table) {
             $table->id();
             $table->foreignId('kid_id')->constrained('kids')->onDelete('cascade'); // Foreign key to kids table
-            $table->string('test_type'); // CBC, Urine, Stool
+            // $table->string('test_type'); // CBC, Urine, Stool
             $table->enum('result', ['positive', 'negative'])->nullable();
             $table->timestamps();
         });
